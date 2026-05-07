@@ -1,14 +1,14 @@
 #pragma once
 #include "ISpeaker.hpp"
 
-class MAX98357A : public ISpeaker {
+class ALSA : public ISpeaker {
 private:
     int sampleRate;
     bool isInitialized;
 
 public:
-    MAX98357A(int rate);
-    ~MAX98357A() override;
+    ALSA(int rate);
+    ~ALSA() override;
 
     bool initialize() override;
     void playBytes(const std::vector<int16_t>& pcmData) override;
